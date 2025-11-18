@@ -1,0 +1,6 @@
+Kernel Version:
+6.12.25-amd64
+User:
+yatharth
+Hardware Info (lscpu | grep 'Virtualization'):
+Virtualization type:                  full

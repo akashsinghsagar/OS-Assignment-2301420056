@@ -1,0 +1,78 @@
+
+┌──(akash㉿akash)-[/media/sf_KaliShare]
+└─$ nano process_management.py
+
+┌──(akash㉿akash)-[/media/sf_KaliShare]
+└─$ nano output.txt                                                                                  
+
+┌──(akash㉿akash)-[/media/sf_KaliShare]
+└─$ python3 process_management.py 1
+--- Running Task 1: Process Creation ---
+Child (PID: 3330) created by Parent (PPID: 3329). Message: Hello from child 1
+Child (PID: 3331) created by Parent (PPID: 3329). Message: Hello from child 2
+Child (PID: 3332) created by Parent (PPID: 3329). Message: Hello from child 3
+--- Task 1 Finished: Parent has waited for all children. ---
+
+┌──(akash㉿akash)-[/media/sf_KaliShare]
+└─$ python3 process_management.py 2
+--- Running Task 2: Command Execution ---
+Child (PID: 3336) is executing the 'ls -l' command.
+total 2004
+-rwxrwx--- 1 root vboxsf   5655 Sep 16 19:51 process_management.py
+-rwxrwx--- 1 root vboxsf 494919 Sep 16 19:51 Screenshot_2025-09-16_19_51_44.png
+-rwxrwx--- 1 root vboxsf 529287 Sep 16 19:52 Screenshot_2025-09-16_19_52_22.png
+-rwxrwx--- 1 root vboxsf 511343 Sep 16 19:52 Screenshot_2025-09-16_19_52_38.png
+-rwxrwx--- 1 root vboxsf 501158 Sep 16 19:52 Screenshot_2025-09-16_19_52_54.png
+--- Task 2 Finished: Child has executed the command. ---
+
+                                                                             
+┌──(akash㉿akash)-[/media/sf_KaliShare]└─$ python3 process_management.py 3a
+--> To see the zombie, run this command in another terminal window while this script is sleeping: 
+--> ps -el | grep defunct
+--- Running Task 3a: Zombie Process Simulation ---
+Parent (PID: 3591) is sleeping for 10 seconds, not waiting.
+Zombie Child (PID: 3592) created. It will exit immediately.
+Parent is done. The child should now be gone.
+--- Task 3a Finished. Check terminal output for 'ps' command. ---
+
+
+┌──(akash㉿akash)-[/media/sf_KaliShare]
+└─$ ps -el | grep defunct    
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+0 Z  1000  2356  2355  0  80   0 -     0 -      pts/0    00:00:00 python3 <defunct>
+
+
+┌──(akash㉿akash)-[/media/sf_KaliShare]
+└─$ python3 process_management.py 3b
+--- Running Task 3b: Orphan Process Simulation ---
+Parent (PID: 3700) is exiting immediately.
+Child (PID: 3701) is sleeping for 5 seconds.
+                                                                             
+┌──(akash㉿akash)-[/media/sf_KaliShare]
+└─$ Child is awake. My PID is 3701, and my Parent's PID is now 1.
+
+
+┌──(akash㉿akash)-[/media/sf_KaliShare]
+└─$ python3 process_management.py 4
+Enter PID to inspect (you can use your own shell's PID, for example): 1137
+--- Running Task 4: Inspecting PID 1137 ---
+Name:   VBoxClient
+State:  S (sleeping)
+VmSize:   215384 kB
+Executable Path: /usr/bin/VBoxClient
+Open File Descriptors: 7 (['0', '1', '2', '3', '4', '5', '6'])
+--- Task 4 Finished. ---
+
+
+
+┌──(akash㉿akash)-[/media/sf_KaliShare]
+└─$ python3 process_management.py 5
+--- Running Task 5: Process Prioritization ---
+Starting CPU-intensive tasks with different priorities (lower nice value = higher priority).
+Child (PID: 3965, nice: 0) starting.
+Child (PID: 3966, nice: 5) starting.
+Child (PID: 3967, nice: 10) starting.
+Child (PID: 3965, nice: 0) finished.
+Child (PID: 3967, nice: 10) finished.
+Child (PID: 3966, nice: 5) finished.
+--- Task 5 Finished. Observe the finishing order. ---

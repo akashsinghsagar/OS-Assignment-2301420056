@@ -1,0 +1,5 @@
+total 25
+-rwxrwx--- 1 root vboxsf 16648 Nov 10 14:51 os_ipc
+-rwxrwx--- 1 root vboxsf  1945 Nov 10 14:51 os_ipc.c
+-rwxrwx--- 1 root vboxsf   371 Nov 10 14:51 py_pipe_fork.py
+Parent: child exited with status 0

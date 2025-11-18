@@ -1,0 +1,4 @@
+/proc/cpuinfo has 'hypervisor' flag: True
+DMI strings: VirtualBox innotek GmbH Oracle Corporation 1.2
+
+Likely running inside VM: True

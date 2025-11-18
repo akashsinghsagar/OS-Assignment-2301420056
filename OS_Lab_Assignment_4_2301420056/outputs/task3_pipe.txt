@@ -1,0 +1,2 @@
+Child received: Hello from parent
+Child received: Hello from parent

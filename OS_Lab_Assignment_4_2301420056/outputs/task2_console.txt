@@ -1,0 +1,8 @@
+System Booting...
+System Shutdown.
+Logs written to /media/sf_KaliShare/OS_Lab_Assignment_4/ENCS351_OS_Lab4/outputs/system_log.txt
+----- system_log.txt -----
+2025-11-10 14:59:03,790 - Process-1 - Process-1 started
+2025-11-10 14:59:03,790 - Process-2 - Process-2 started
+2025-11-10 14:59:05,814 - Process-1 - Process-1 terminated
+2025-11-10 14:59:05,822 - Process-2 - Process-2 terminated
